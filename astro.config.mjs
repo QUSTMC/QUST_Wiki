@@ -1,24 +1,21 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import { unified } from '@astrojs/markdown-remark'; // 1. 导入 remark 处理器
+import { unified } from '@astrojs/markdown-remark'; // 1. 导入 unified
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://qustwiki.aurelith.top', // 替换为你的实际域名
+  site: 'https://qustwiki.aurelith.top',
   markdown: {
-    processor: unified(), // 2. 指定使用 remark 处理器
+    processor: unified(), // 2. 传入 unified() 的调用结果，而不是字符串
   },
   integrations: [
     starlight({
-      title: 'My Docs',
-      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+      title: 'QUSTMC',
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/orgs/QUSTMC' }],
       sidebar: [
         {
           label: 'Guides',
-          items: [
-            { label: 'Example Guide', slug: 'guides/example' },
-          ],
+          items: [{ label: 'Example Guide', slug: 'guides/example' }],
         },
         {
           label: 'Reference',
@@ -27,5 +24,4 @@ export default defineConfig({
       ],
     }),
   ],
-  // 注意：之前添加的 vite.build.rolldownOptions.external 配置已移除
 });
