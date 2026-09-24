@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://qustwiki.aurelith.top',
 	integrations: [
 		starlight({
 			title: 'My Docs',
@@ -23,4 +24,12 @@ export default defineConfig({
 			],
 		}),
 	],
+	// 解决 Cloudflare Pages 构建时 @bruits/satteri-wasm32-wasi 模块无法解析的问题
+	vite: {
+		build: {
+			rolldownOptions: {
+				external: ['@bruits/satteri-wasm32-wasi'],
+			},
+		},
+	},
 });
