@@ -6,18 +6,22 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'QUSTMC',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/QUSTMC/QUST_Wiki' }],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: '简介',
+					items: [{ autogenerate: { directory: '社团介绍' } }],
+				},
+				{
+					label: '指南',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ autogenerate: { directory: '入服须知' } },
 					],
 				},
 				{
-					label: 'Reference',
+					label: '参考',
 					items: [{ autogenerate: { directory: 'reference' } }],
 				},
 			],
