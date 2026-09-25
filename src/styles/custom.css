@@ -1,0 +1,5 @@
+.sl-markdown-content img {
+	width: min(100%, 48rem);
+	height: auto;
+	margin: 1.5rem auto;
+}
